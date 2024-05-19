@@ -35,6 +35,9 @@ def upload_pdf():
         if image not in pdf_images_not_duplicate:
             pdf_images_not_duplicate.append(image)
 
+    if not os.path.exists('images'):
+            os.makedirs('images')
+            
     indice = 1
     for image in pdf_images_not_duplicate:
         image_filename = f'images/image_{indice}'
